@@ -66,8 +66,4 @@
       background-color: #f9f9f9;
     }
   }
-  item.svg:focus
-  item.svg:hover {
-    color: red;
-    outline: none;
-  }
+  
