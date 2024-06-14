@@ -3,10 +3,10 @@ import SearchItem from './SearchItem';
 import AddItem from './AddItem';
 import Content from './Content';
 import Footer from './Footer';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
-  const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppinglist')));
+  const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState('')
   const [search, setSearch] = useState('')
 
@@ -38,7 +38,9 @@ function App() {
     addItem(newItem);
     setNewItem('');
   }
-
+useEffect(()=>{
+  setItems(JSON.parse(localStorage.getItem('shoppinglist')))
+},[])
   return (
     <div className="App">
       <Header title="Grocery List" />
@@ -52,11 +54,11 @@ function App() {
         setSearch={setSearch}
       />
       <Content
-        items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
+        items={items?.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
       />
-      <Footer length={items.length} />
+      <Footer length={items?.length} />
     </div>
   );
 }
