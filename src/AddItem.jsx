@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { FaPlus } from 'react-icons/fa';
 import { useRef } from 'react';
 

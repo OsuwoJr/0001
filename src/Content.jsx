@@ -1,9 +1,9 @@
-import ItemList from './ItemList';
-
+/* eslint-disable react/prop-types */
+import ItemList from "./itemList"
 const Content = ({ items, handleCheck, handleDelete }) => {
     return (
         <main>
-            {items.length ? (
+            {items?.length ? (
                 <ItemList
                     items={items}
                     handleCheck={handleCheck}
