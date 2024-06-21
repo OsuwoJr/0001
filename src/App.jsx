@@ -6,6 +6,8 @@ import Footer from './Footer';
 import { useEffect, useState } from 'react';
 
 function App() {
+  const API_URL = 'http://localhost:3500/items' 
+  
   const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppinglist')) || []);
   const [newItem, setNewItem] = useState('')
   const [search, setSearch] = useState('')
