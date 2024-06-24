@@ -24,7 +24,7 @@ function App() {
         setItems(listItems);
         setFetchError(null);
     } catch (err) {
-        setFetchError(err.message)
+        setFetchError(err.message);
     }
   }
   fetchItems();
@@ -68,11 +68,15 @@ useEffect(()=>{
         search={search}
         setSearch={setSearch}
       />
+      <main>
+        {fetchError && <p style={{color:"red"}}>{`Error:${fetchError}`}</p>}
       <Content
         items={items?.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
       />
+      </main>
+     
       <Footer length={items?.length} />
     </div>
   );
