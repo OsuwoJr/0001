@@ -5,7 +5,7 @@ const apiRequest = async (url = '',optionsObj = null, errMsg = null) => {
  }catch(err) {
     errMsg = err.message;
  }finally {
-
+    return errMsg;
  }
 }
 
