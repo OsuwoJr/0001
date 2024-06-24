@@ -70,11 +70,14 @@ useEffect(()=>{
       />
       <main>
         {fetchError && <p style={{color:"red"}}>{`Error:${fetchError}`}</p>}
-      <Content
+        {!fetchError &&
+        <Content
         items={items?.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
       />
+        }
+      
       </main>
      
       <Footer length={items?.length} />
