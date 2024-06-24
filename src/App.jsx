@@ -24,7 +24,7 @@ function App() {
         setItems(listItems);
         setFetchError(null);
     } catch (err) {
-        console.log(err.stack)
+        setFetchError(err.message)
     }
   }
   fetchItems();
